@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4eee5">
+
+    <title>Para Elías 🤍</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="app">
+
+    <!-- =========================
+         1. EL SOBRE
+    ========================== -->
+    <section class="screen active" id="inicio">
+
+        <div class="intro">
+            <p class="mini">TENÉS ALGO ESPERÁNDOTE</p>
+
+            <div class="envelope" onclick="abrirCarta()">
+                <div class="envelope-back"></div>
+
+                <div class="letter-preview">
+                    <span>Para Elías</span>
+                    <small>🤍</small>
+                </div>
+
+                <div class="envelope-front"></div>
+                <div class="envelope-flap"></div>
+
+                <div class="seal">✦</div>
+            </div>
+
+            <h1>Para Elías</h1>
+
+            <p class="subtitle">
+                Hay algo que alguien quiere que sepas.
+            </p>
+
+            <button onclick="abrirCarta()">
+                Abrir carta
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         2. PRIMER MENSAJE
+    ========================== -->
+    <section class="screen" id="carta1">
+
+        <div class="paper">
+
+            <span class="star">✦</span>
+
+            <p class="mini">UNA PEQUEÑA CARTA PARA VOS</p>
+
+            <h2>
+                Hay lugares a los que uno no llega por casualidad.
+            </h2>
+
+            <p>
+                Hay personas que todavía tenés que conocer,
+                historias que todavía tenés que escuchar
+                y momentos que todavía están esperando por vos.
+            </p>
+
+            <p>
+                Y parece que hay un lugar en el que
+                todavía tenés algo para dar.
+            </p>
+
+            <button onclick="mostrarPantalla('destino')">
+                Seguir leyendo
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         3. DESTINO
+    ========================== -->
+    <section class="screen" id="destino">
+
+        <div class="paper center">
+
+            <p class="mini">GUARDÁ ESTAS FECHAS</p>
+
+            <div class="dates">
+
+                <div class="date">
+                    <strong>25</strong>
+                    <span>SEP</span>
+                </div>
+
+                <div class="date">
+                    <strong>26</strong>
+                    <span>SEP</span>
+                </div>
+
+                <div class="date">
+                    <strong>27</strong>
+                    <span>SEP</span>
+                </div>
+
+            </div>
+
+            <p class="destination-label">DESTINO</p>
+
+            <h1 class="santa-ana">
+                Santa Ana
+            </h1>
+
+            <p>
+                Misión 2026
+            </p>
+
+            <button onclick="mostrarPantalla('antes')">
+                Hay algo más...
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         4. ANTES DE LA SORPRESA
+    ========================== -->
+    <section class="screen" id="antes">
+
+        <div class="paper">
+
+            <span class="star">✦</span>
+
+            <p class="mini">ANTES DE SEGUIR...</p>
+
+            <h2>
+                Sé que esta vez parecía que quizás
+                no ibas a poder estar.
+            </h2>
+
+            <p>
+                A veces hay cosas que se interponen en el camino
+                y hacen que algo que queremos parezca un poquito
+                más difícil.
+            </p>
+
+            <p>
+                Pero alguien que te tiene mucho aprecio
+                quiso sacarte, al menos, una de esas preocupaciones.
+            </p>
+
+            <button class="special" onclick="mostrarPantalla('ticketScreen')">
+                Descubrir mi sorpresa
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         5. TICKET
+    ========================== -->
+    <section class="screen" id="ticketScreen">
+
+        <div class="ticket-wrapper">
+
+            <p class="mini light">PASE DE MISIÓN</p>
+
+            <div class="ticket">
+
+                <div class="ticket-top">
+                    <span>MISIONEROS</span>
+                    <span>2026</span>
+                </div>
+
+                <div class="ticket-body">
+
+                    <p class="ticket-label">MISIONERO</p>
+
+                    <h1>ELÍAS</h1>
+
+                    <div class="ticket-line"></div>
+
+                    <div class="ticket-grid">
+
+                        <div>
+                            <small>DESTINO</small>
+                            <strong>SANTA ANA</strong>
+                        </div>
+
+                        <div>
+                            <small>FECHA</small>
+                            <strong>25 — 27 SEP</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="ticket-line"></div>
+
+                    <div class="status">
+                        <small>ESTADO</small>
+                        <strong>✓ CONFIRMADO</strong>
+                    </div>
+
+                    <div class="paid">
+                        MISIÓN PAGADA
+                    </div>
+
+                    <p class="ticket-number">
+                        SA • 25SEP • ELIAS
+                    </p>
+
+                </div>
+
+            </div>
+
+            <p class="reveal-text">
+                Sí. Leíste bien. 🤍
+            </p>
+
+            <button onclick="mostrarPantalla('libertad')">
+                Continuar
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         6. MENSAJE IMPORTANTE
+    ========================== -->
+    <section class="screen" id="libertad">
+
+        <div class="paper">
+
+            <span class="heart">♡</span>
+
+            <p class="mini">Y ALGO IMPORTANTE...</p>
+
+            <h2>
+                Que tu lugar esté pago no significa
+                que estés obligado a ir.
+            </h2>
+
+            <p>
+                Esto no es una presión ni un compromiso.
+            </p>
+
+            <p>
+                Es simplemente un regalo, para que si en tu corazón
+                querés estar en Santa Ana, el dinero no sea
+                lo que te lo impida.
+            </p>
+
+            <p>
+                Podés decir que sí, podés decir que no,
+                y cualquiera de las dos está bien.
+            </p>
+
+            <p class="important">
+                Solo querían que pudieras elegir libremente. 🤍
+            </p>
+
+            <button onclick="mostrarPantalla('final')">
+                Entendido 🤍
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         7. FINAL
+    ========================== -->
+    <section class="screen" id="final">
+
+        <div class="final-content">
+
+            <span class="final-star">✦</span>
+
+            <p class="mini light">MISIÓN SANTA ANA · 2026</p>
+
+            <h1>
+                Si elegís ir...
+            </h1>
+
+            <h2>
+                prepará la mochila.
+            </h2>
+
+            <p class="final-destination">
+                Santa Ana te espera.
+            </p>
+
+            <div class="final-date">
+                25 · 26 · 27 SEPTIEMBRE
+            </div>
+
+            <p class="anonymous">
+                Con mucho cariño,<br>
+                de parte de alguien que te aprecia mucho. 🤍
+            </p>
+
+            <!--
+            ACÁ DESPUÉS PODEMOS AGREGAR
+            LA FOTO DEL GRUPO MISIONEROS
+            -->
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
