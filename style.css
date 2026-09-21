@@ -1,14 +1,4 @@
-/* =========================================================
-   COMISIÓN ADULTOS · MISIÓN SANTA ANA 2026
-   style.css
-========================================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
-
-
-/* =========================
-   VARIABLES
-========================= */
 
 :root {
   --crema: #f5f0e6;
@@ -18,7 +8,6 @@
   --verde-suave: #dce4d6;
   --tierra: #a46f48;
   --tierra-claro: #d8b28f;
-  --arena: #e8dcc8;
   --texto: #33352f;
   --texto-suave: #6c7066;
   --blanco: #ffffff;
@@ -29,11 +18,6 @@
   --radio: 24px;
   --sombra: 0 15px 45px rgba(39, 53, 36, 0.08);
 }
-
-
-/* =========================
-   RESET
-========================= */
 
 * {
   margin: 0;
@@ -58,10 +42,7 @@ a {
   text-decoration: none;
 }
 
-
-/* =========================
-   ESTRUCTURA GENERAL
-========================= */
+/* GENERAL */
 
 .section {
   padding: 110px 25px;
@@ -84,7 +65,7 @@ a {
 
 .section-number {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--tierra);
@@ -97,7 +78,7 @@ a {
 
 .section-label {
   text-transform: uppercase;
-  font-size: 0.78rem;
+  font-size: .78rem;
   font-weight: 600;
   letter-spacing: 2px;
   color: var(--texto-suave);
@@ -105,7 +86,7 @@ a {
 }
 
 .section-label.light {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255,255,255,.55);
 }
 
 h2 {
@@ -124,45 +105,40 @@ h2 {
   margin-bottom: 22px;
 }
 
+.texto-normal {
+  max-width: 750px;
+}
 
-/* =========================================================
-   HERO / PORTADA
-========================================================= */
+/* PORTADA */
 
 .hero {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  min-height: 100svh;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
   padding: 70px 25px;
 
   background:
-    radial-gradient(
-      circle at 50% 30%,
-      rgba(220, 228, 214, 0.85),
-      transparent 45%
-    ),
+    radial-gradient(circle at 50% 30%,
+      rgba(220,228,214,.85),
+      transparent 45%),
     var(--crema-claro);
 
   position: relative;
   overflow: hidden;
 }
 
-
-/* círculo decorativo */
-
 .hero::before {
   content: "";
   position: absolute;
-
   width: 450px;
   height: 450px;
-
-  border: 1px solid rgba(64, 81, 59, 0.10);
+  border: 1px solid rgba(64,81,59,.10);
   border-radius: 50%;
-
   top: -170px;
   right: -140px;
 }
@@ -170,19 +146,16 @@ h2 {
 .hero::after {
   content: "";
   position: absolute;
-
   width: 300px;
   height: 300px;
-
-  background: rgba(164, 111, 72, 0.05);
+  background: rgba(164,111,72,.05);
   border-radius: 50%;
-
   bottom: -150px;
   left: -100px;
 }
 
 .hero-content {
-  max-width: 850px;
+  width: min(850px, 100%);
   position: relative;
   z-index: 2;
 }
@@ -190,7 +163,7 @@ h2 {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-size: 0.78rem;
+  font-size: .78rem;
   font-weight: 600;
   color: var(--tierra);
   margin-bottom: 25px;
@@ -199,18 +172,16 @@ h2 {
 .hero-icon {
   font-size: 3rem;
   margin-bottom: 20px;
+  animation: crecer 3s ease-in-out infinite;
 }
 
 .hero h1 {
   font-family: var(--serif);
   color: var(--verde-oscuro);
-
   font-size: clamp(4rem, 10vw, 8rem);
   font-weight: 500;
-
-  line-height: 0.88;
+  line-height: .88;
   letter-spacing: -3px;
-
   margin-bottom: 40px;
 }
 
@@ -228,25 +199,18 @@ h2 {
 .hero-intro {
   max-width: 620px;
   margin: 0 auto 40px;
-
   color: var(--texto-suave);
-  font-size: 1rem;
 }
 
 .btn-scroll {
   display: inline-block;
-
   background: var(--verde-oscuro);
   color: white;
-
   padding: 15px 25px;
-
   border-radius: 50px;
-
-  font-size: 0.9rem;
+  font-size: .9rem;
   font-weight: 500;
-
-  transition: 0.3s ease;
+  transition: .3s ease;
 }
 
 .btn-scroll:hover {
@@ -254,10 +218,7 @@ h2 {
   background: var(--verde);
 }
 
-
-/* =========================================================
-   01 · PUNTO DE PARTIDA
-========================================================= */
+/* PUNTO DE PARTIDA */
 
 .cita {
   color: var(--tierra);
@@ -273,24 +234,13 @@ h2 {
   margin-bottom: 20px;
 }
 
-#punto-partida .container > p:not(.section-label):not(.cita) {
-  max-width: 750px;
-}
-
-
-/* elementos parábola */
-
 .elementos-parabola {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   margin-top: 70px;
-
   background: white;
-
   padding: 40px;
-
   border-radius: var(--radio);
   box-shadow: var(--sombra);
 }
@@ -315,29 +265,21 @@ h2 {
   font-size: 1.4rem;
 }
 
-
-/* =========================================================
-   02 · CARDS
-========================================================= */
+/* CARDS */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2,1fr);
   gap: 22px;
-
   margin-top: 55px;
 }
 
 .card {
   background: var(--crema-claro);
-
   padding: 38px;
-
   border-radius: var(--radio);
-
-  border: 1px solid rgba(64, 81, 59, 0.08);
-
-  transition: 0.35s ease;
+  border: 1px solid rgba(64,81,59,.08);
+  transition: .35s ease;
 }
 
 .card:hover {
@@ -354,41 +296,31 @@ h2 {
 .card h3 {
   font-family: var(--serif);
   color: var(--verde-oscuro);
-
   font-size: 1.55rem;
   margin-bottom: 14px;
 }
 
 .card p {
   color: var(--texto-suave);
-  font-size: 0.95rem;
+  font-size: .95rem;
 }
 
-
-/* =========================================================
-   03 · OBJETIVO
-========================================================= */
+/* OBJETIVO */
 
 .objetivo {
   text-align: center;
-
   background:
-    radial-gradient(
-      circle at center,
-      rgba(220, 228, 214, 0.65),
-      transparent 60%
-    ),
+    radial-gradient(circle at center,
+      rgba(220,228,214,.65),
+      transparent 60%),
     var(--crema-claro);
 }
 
 .objetivo blockquote {
   font-family: var(--serif);
-
-  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  font-size: clamp(1.7rem,4vw,2.7rem);
   line-height: 1.45;
-
   color: var(--verde-oscuro);
-
   margin: 45px auto 55px;
 }
 
@@ -398,13 +330,9 @@ h2 {
 
 .no-buscamos {
   background: white;
-
   padding: 30px;
-
   border-radius: var(--radio);
-
   box-shadow: var(--sombra);
-
   margin-bottom: 45px;
 }
 
@@ -419,10 +347,7 @@ h2 {
   color: var(--verde-oscuro);
 }
 
-
-/* =========================================================
-   04 · RECORRIDO
-========================================================= */
+/* RECORRIDO */
 
 .recorrido {
   margin: 60px 0;
@@ -432,57 +357,41 @@ h2 {
   display: flex;
   align-items: center;
   gap: 25px;
-
   background: var(--crema-claro);
-
   padding: 20px 25px;
-
   border-radius: 18px;
 }
 
 .paso span {
-  font-size: 0.7rem;
+  font-size: .7rem;
   font-weight: 700;
-
   color: var(--tierra);
-
-  letter-spacing: 1px;
 }
 
 .paso p {
   font-family: var(--serif);
   font-size: 1.35rem;
-
   color: var(--verde-oscuro);
 }
 
 .linea {
   width: 1px;
   height: 25px;
-
   background: var(--tierra-claro);
-
   margin-left: 38px;
 }
 
 .nota {
   background: var(--verde-suave);
-
   padding: 22px 26px;
-
   border-radius: 16px;
-
-  font-size: 0.95rem;
 }
 
-
-/* =========================================================
-   05 · TELÉFONO
-========================================================= */
+/* TELÉFONO */
 
 .telefono-section {
   background: var(--verde-oscuro);
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255,255,255,.82);
 }
 
 .telefono-section h2 {
@@ -491,11 +400,9 @@ h2 {
 
 .telefono-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-
+  grid-template-columns: .8fr 1.2fr;
   gap: 70px;
   align-items: center;
-
   margin-top: 40px;
 }
 
@@ -503,29 +410,22 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-
   min-height: 350px;
-
-  border: 1px solid rgba(255,255,255,0.1);
-
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: 50%;
 
   background:
-    radial-gradient(
-      circle,
-      rgba(164,111,72,0.25),
-      transparent 65%
-    );
+    radial-gradient(circle,
+      rgba(164,111,72,.25),
+      transparent 65%);
 }
 
 .telefono-icon {
-  font-size: clamp(7rem, 15vw, 12rem);
-
+  font-size: clamp(7rem,15vw,12rem);
   transform: rotate(-8deg);
-
-  filter: drop-shadow(
-    0 20px 25px rgba(0,0,0,0.25)
-  );
+  filter: drop-shadow(0 20px 25px rgba(0,0,0,.25));
+  cursor: pointer;
+  user-select: none;
 }
 
 .telefono-content p {
@@ -534,115 +434,75 @@ h2 {
 
 .pregunta-principal {
   font-family: var(--serif);
-
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-
+  font-size: clamp(1.6rem,3vw,2.4rem);
   color: var(--tierra-claro);
-
   padding: 25px 0;
-
   margin: 25px 0;
-
-  border-top: 1px solid rgba(255,255,255,0.15);
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+  border-top: 1px solid rgba(255,255,255,.15);
+  border-bottom: 1px solid rgba(255,255,255,.15);
 }
-
-
-/* preguntas */
 
 .preguntas-telefono {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
+  grid-template-columns: repeat(2,1fr);
   gap: 15px;
-
   margin: 70px 0;
 }
 
 .preguntas-telefono div {
-  border: 1px solid rgba(255,255,255,0.12);
-
+  border: 1px solid rgba(255,255,255,.12);
   padding: 22px;
-
   border-radius: 15px;
-
   color: white;
-
-  transition: 0.3s ease;
+  transition: .3s ease;
+  cursor: pointer;
 }
 
-.preguntas-telefono div:hover {
-  background: rgba(255,255,255,0.06);
+.preguntas-telefono div:hover,
+.preguntas-telefono .pregunta-activa {
+  background: rgba(255,255,255,.1);
+  border-color: var(--tierra-claro);
+  transform: translateY(-3px);
 }
-
-
-/* conexión */
 
 .conexion {
   text-align: center;
-
   max-width: 750px;
-
   margin: 0 auto;
-
-  padding-top: 20px;
 }
 
 .conexion h3 {
   font-family: var(--serif);
-
   color: var(--tierra-claro);
-
-  font-size: clamp(2rem, 4vw, 3.3rem);
-
+  font-size: clamp(2rem,4vw,3.3rem);
   margin: 15px 0 25px;
 }
 
 .conexion-final {
   margin-top: 40px;
-
   padding: 30px;
-
   border-radius: 20px;
-
-  background: rgba(255,255,255,0.06);
-
+  background: rgba(255,255,255,.06);
   font-family: var(--serif);
-
   font-size: 1.3rem;
-
   color: white;
 }
 
-
-/* =========================================================
-   06 · FOCOS
-========================================================= */
-
-.focos-section {
-  background: var(--crema-claro);
-}
+/* FOCOS */
 
 .focos-grid {
   display: grid;
-
-  grid-template-columns: repeat(4, 1fr);
-
+  grid-template-columns: repeat(4,1fr);
   gap: 18px;
-
   margin-top: 60px;
 }
 
 .foco-card {
   background: white;
-
   padding: 30px 24px;
-
   border-radius: 22px;
-
-  border: 1px solid rgba(64,81,59,0.08);
-
-  transition: 0.35s ease;
+  border: 1px solid rgba(64,81,59,.08);
+  transition: .35s ease;
 }
 
 .foco-card:hover {
@@ -652,88 +512,75 @@ h2 {
 
 .foco-card > span {
   font-size: 2.5rem;
-
   display: block;
-
   margin-bottom: 20px;
 }
 
 .foco-card h3 {
   font-family: var(--serif);
-
   font-size: 1.5rem;
-
   color: var(--verde-oscuro);
-
   margin-bottom: 14px;
 }
 
 .foco-pregunta {
   font-weight: 600;
-
   margin-bottom: 15px;
 }
 
 .foco-card small {
   color: var(--texto-suave);
-
   line-height: 1.6;
 }
 
-
-/* unión */
-
 .union-focos {
   max-width: 750px;
-
   margin: 80px auto 0;
-
   text-align: center;
-
   background: var(--verde-suave);
-
   padding: 45px 35px;
-
   border-radius: var(--radio);
 }
 
-.union-focos > p:first-child,
-.union-focos > p:nth-child(2),
-.union-focos > p:nth-child(3) {
-  font-size: 1.4rem;
-  margin: 8px;
+.combinaciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.combinaciones span {
+  background: rgba(255,255,255,.6);
+  padding: 10px 16px;
+  border-radius: 50px;
+}
+
+.flecha-union {
+  font-size: 2rem;
+  color: var(--tierra);
+  margin: 20px 0 5px;
 }
 
 .union-focos h3 {
   font-family: var(--serif);
-
   color: var(--verde-oscuro);
-
-  font-size: clamp(2rem, 5vw, 3.4rem);
-
-  margin: 25px 0;
+  font-size: clamp(2rem,5vw,3.4rem);
+  margin-bottom: 25px;
 }
 
 .union-focos p {
   margin-top: 15px;
 }
 
-
-/* =========================================================
-   07 · CIERRE
-========================================================= */
+/* CIERRE */
 
 .cierre {
   min-height: 100vh;
-
   display: flex;
   align-items: center;
-
   text-align: center;
-
   background: var(--verde-oscuro);
-
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,.8);
 }
 
 .cierre h2 {
@@ -742,15 +589,12 @@ h2 {
 
 .cierre-icon {
   font-size: 3rem;
-
   margin: 20px 0;
 }
 
 .cierre-intro {
   font-family: var(--serif);
-
   font-size: 1.4rem;
-
   margin-bottom: 60px;
 }
 
@@ -758,68 +602,46 @@ h2 {
   color: var(--tierra-claro);
 }
 
-
-/* preguntas */
-
 .preguntas-finales {
   text-align: left;
 }
 
 .preguntas-finales > div {
   display: grid;
-
   grid-template-columns: 50px 1fr;
-
   gap: 20px;
-
   padding: 25px 0;
-
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 .preguntas-finales span {
   color: var(--tierra-claro);
-
-  font-size: 0.75rem;
-
+  font-size: .75rem;
   font-weight: 700;
 }
 
 .preguntas-finales p {
   font-family: var(--serif);
-
   font-size: 1.25rem;
-
   color: white;
 }
-
-
-/* frase final */
 
 .frase-final {
   margin-top: 90px;
 }
 
 .frase-final p {
-  font-size: 0.85rem;
-
+  font-size: .85rem;
   text-transform: uppercase;
-
   letter-spacing: 2px;
-
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,.45);
 }
 
 .frase-final h3 {
   font-family: var(--serif);
-
-  font-size: clamp(2.8rem, 7vw, 5rem);
-
+  font-size: clamp(2.8rem,7vw,5rem);
   font-weight: 500;
-
   color: var(--tierra-claro);
-
-  margin: 5px 0 15px;
 }
 
 .frase-final span {
@@ -828,18 +650,59 @@ h2 {
 
 .firma {
   margin-top: 80px;
-
-  font-size: 0.75rem;
-
-  letter-spacing: 1px;
-
-  color: rgba(255,255,255,0.35);
+  font-size: .75rem;
+  color: rgba(255,255,255,.35);
 }
 
+/* ANIMACIONES */
 
-/* =========================================================
-   RESPONSIVE · CELULAR
-========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-title {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal-title.visible-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.telefono-icon.ringing {
+  animation: ring .15s ease-in-out infinite alternate;
+}
+
+@keyframes ring {
+  from {
+    transform: rotate(-14deg);
+  }
+
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes crecer {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
+
+/* TABLET */
 
 @media (max-width: 850px) {
 
@@ -852,28 +715,23 @@ h2 {
   }
 
   .focos-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2,1fr);
   }
 
   .telefono-grid {
     grid-template-columns: 1fr;
-
-    gap: 30px;
+    gap: 35px;
   }
 
   .telefono-visual {
     min-height: 280px;
-
     max-width: 280px;
-
     width: 100%;
-
     margin: auto;
   }
 
   .elementos-parabola {
     flex-wrap: wrap;
-
     gap: 20px;
   }
 
@@ -884,38 +742,24 @@ h2 {
   .flecha {
     display: none;
   }
-
 }
 
-
-/* =========================
-   CELULARES PEQUEÑOS
-========================= */
+/* CELULAR */
 
 @media (max-width: 550px) {
-
-  .hero {
-    min-height: 100svh;
-  }
 
   .hero h1 {
     letter-spacing: -2px;
   }
 
   .hero-intro {
-    font-size: 0.92rem;
+    font-size: .92rem;
   }
 
   .elementos-parabola {
     display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: repeat(2,1fr);
     padding: 25px 15px;
-  }
-
-  .elemento span {
-    font-size: 2.2rem;
   }
 
   .cards {
@@ -946,10 +790,6 @@ h2 {
     padding: 35px 22px;
   }
 
-  .paso {
-    padding: 18px;
-  }
-
   .paso p {
     font-size: 1.15rem;
   }
@@ -961,13 +801,7 @@ h2 {
   .preguntas-finales p {
     font-size: 1.1rem;
   }
-
 }
-
-
-/* =========================================================
-   SELECCIÓN DE TEXTO
-========================================================= */
 
 ::selection {
   background: var(--verde);
