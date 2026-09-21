@@ -1,746 +1,975 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+/* =========================================================
+   COMISIÓN ADULTOS · MISIÓN SANTA ANA 2026
+   style.css
+========================================================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+
+
+/* =========================
+   VARIABLES
+========================= */
 
 :root {
-    --crema: #f5efe6;
-    --papel: #fffaf2;
-    --marron: #4f4037;
-    --marron-claro: #8c7564;
-    --verde: #66745f;
-    --verde-oscuro: #4e5c49;
-    --dorado: #b99a67;
-    --blanco: #fffdf9;
+  --crema: #f5f0e6;
+  --crema-claro: #fbf8f2;
+  --verde: #40513b;
+  --verde-oscuro: #273524;
+  --verde-suave: #dce4d6;
+  --tierra: #a46f48;
+  --tierra-claro: #d8b28f;
+  --arena: #e8dcc8;
+  --texto: #33352f;
+  --texto-suave: #6c7066;
+  --blanco: #ffffff;
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', Arial, sans-serif;
+
+  --radio: 24px;
+  --sombra: 0 15px 45px rgba(39, 53, 36, 0.08);
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(185,154,103,.12), transparent 35%),
-        radial-gradient(circle at 80% 80%, rgba(102,116,95,.12), transparent 35%),
-        var(--crema);
-
-    font-family: 'Montserrat', sans-serif;
-    color: var(--marron);
-    overflow-x: hidden;
+  font-family: var(--sans);
+  background: var(--crema-claro);
+  color: var(--texto);
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-/* ========================================
-   ESTRUCTURA
-======================================== */
-
-.app {
-    min-height: 100vh;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.screen {
+
+/* =========================
+   ESTRUCTURA GENERAL
+========================= */
+
+.section {
+  padding: 110px 25px;
+  position: relative;
+}
+
+.section-alt {
+  background: var(--crema);
+}
+
+.container {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.container-small {
+  width: min(800px, 100%);
+  margin: 0 auto;
+}
+
+.section-number {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--tierra);
+  margin-bottom: 8px;
+}
+
+.section-number.light {
+  color: var(--tierra-claro);
+}
+
+.section-label {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--texto-suave);
+  margin-bottom: 28px;
+}
+
+.section-label.light {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--verde-oscuro);
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+  line-height: 1.12;
+  margin-bottom: 30px;
+}
+
+.section-intro {
+  max-width: 720px;
+  font-size: 1.08rem;
+  color: var(--texto-suave);
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   HERO / PORTADA
+========================================================= */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  padding: 70px 25px;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(220, 228, 214, 0.85),
+      transparent 45%
+    ),
+    var(--crema-claro);
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* círculo decorativo */
+
+.hero::before {
+  content: "";
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border: 1px solid rgba(64, 81, 59, 0.10);
+  border-radius: 50%;
+
+  top: -170px;
+  right: -140px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  background: rgba(164, 111, 72, 0.05);
+  border-radius: 50%;
+
+  bottom: -150px;
+  left: -100px;
+}
+
+.hero-content {
+  max-width: 850px;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--tierra);
+  margin-bottom: 25px;
+}
+
+.hero-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  color: var(--verde-oscuro);
+
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 500;
+
+  line-height: 0.88;
+  letter-spacing: -3px;
+
+  margin-bottom: 40px;
+}
+
+.hero-frase {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin: 0 auto 25px;
+  max-width: 650px;
+}
+
+.hero-frase strong {
+  color: var(--verde);
+}
+
+.hero-intro {
+  max-width: 620px;
+  margin: 0 auto 40px;
+
+  color: var(--texto-suave);
+  font-size: 1rem;
+}
+
+.btn-scroll {
+  display: inline-block;
+
+  background: var(--verde-oscuro);
+  color: white;
+
+  padding: 15px 25px;
+
+  border-radius: 50px;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.btn-scroll:hover {
+  transform: translateY(-3px);
+  background: var(--verde);
+}
+
+
+/* =========================================================
+   01 · PUNTO DE PARTIDA
+========================================================= */
+
+.cita {
+  color: var(--tierra);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 45px;
+}
+
+.texto-destacado {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+
+#punto-partida .container > p:not(.section-label):not(.cita) {
+  max-width: 750px;
+}
+
+
+/* elementos parábola */
+
+.elementos-parabola {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 70px;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.elemento {
+  text-align: center;
+  flex: 1;
+}
+
+.elemento span {
+  font-size: 2.8rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.elemento p {
+  font-weight: 600;
+}
+
+.flecha {
+  color: var(--tierra-claro);
+  font-size: 1.4rem;
+}
+
+
+/* =========================================================
+   02 · CARDS
+========================================================= */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+
+  margin-top: 55px;
+}
+
+.card {
+  background: var(--crema-claro);
+
+  padding: 38px;
+
+  border-radius: var(--radio);
+
+  border: 1px solid rgba(64, 81, 59, 0.08);
+
+  transition: 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra);
+}
+
+.card-icon {
+  font-size: 2.3rem;
+  display: block;
+  margin-bottom: 22px;
+}
+
+.card h3 {
+  font-family: var(--serif);
+  color: var(--verde-oscuro);
+
+  font-size: 1.55rem;
+  margin-bottom: 14px;
+}
+
+.card p {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   03 · OBJETIVO
+========================================================= */
+
+.objetivo {
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(220, 228, 214, 0.65),
+      transparent 60%
+    ),
+    var(--crema-claro);
+}
+
+.objetivo blockquote {
+  font-family: var(--serif);
+
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  line-height: 1.45;
+
+  color: var(--verde-oscuro);
+
+  margin: 45px auto 55px;
+}
+
+.objetivo blockquote strong {
+  color: var(--tierra);
+}
+
+.no-buscamos {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: var(--radio);
+
+  box-shadow: var(--sombra);
+
+  margin-bottom: 45px;
+}
+
+.no-buscamos p {
+  padding: 8px 0;
+  color: var(--texto-suave);
+}
+
+.gran-frase {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--verde-oscuro);
+}
+
+
+/* =========================================================
+   04 · RECORRIDO
+========================================================= */
+
+.recorrido {
+  margin: 60px 0;
+}
+
+.paso {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  background: var(--crema-claro);
+
+  padding: 20px 25px;
+
+  border-radius: 18px;
+}
+
+.paso span {
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  color: var(--tierra);
+
+  letter-spacing: 1px;
+}
+
+.paso p {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+
+  color: var(--verde-oscuro);
+}
+
+.linea {
+  width: 1px;
+  height: 25px;
+
+  background: var(--tierra-claro);
+
+  margin-left: 38px;
+}
+
+.nota {
+  background: var(--verde-suave);
+
+  padding: 22px 26px;
+
+  border-radius: 16px;
+
+  font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   05 · TELÉFONO
+========================================================= */
+
+.telefono-section {
+  background: var(--verde-oscuro);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.telefono-section h2 {
+  color: white;
+}
+
+.telefono-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 70px;
+  align-items: center;
+
+  margin-top: 40px;
+}
+
+.telefono-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 350px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(164,111,72,0.25),
+      transparent 65%
+    );
+}
+
+.telefono-icon {
+  font-size: clamp(7rem, 15vw, 12rem);
+
+  transform: rotate(-8deg);
+
+  filter: drop-shadow(
+    0 20px 25px rgba(0,0,0,0.25)
+  );
+}
+
+.telefono-content p {
+  margin-bottom: 20px;
+}
+
+.pregunta-principal {
+  font-family: var(--serif);
+
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+
+  color: var(--tierra-claro);
+
+  padding: 25px 0;
+
+  margin: 25px 0;
+
+  border-top: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+
+/* preguntas */
+
+.preguntas-telefono {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+
+  margin: 70px 0;
+}
+
+.preguntas-telefono div {
+  border: 1px solid rgba(255,255,255,0.12);
+
+  padding: 22px;
+
+  border-radius: 15px;
+
+  color: white;
+
+  transition: 0.3s ease;
+}
+
+.preguntas-telefono div:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+
+/* conexión */
+
+.conexion {
+  text-align: center;
+
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  padding-top: 20px;
+}
+
+.conexion h3 {
+  font-family: var(--serif);
+
+  color: var(--tierra-claro);
+
+  font-size: clamp(2rem, 4vw, 3.3rem);
+
+  margin: 15px 0 25px;
+}
+
+.conexion-final {
+  margin-top: 40px;
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.06);
+
+  font-family: var(--serif);
+
+  font-size: 1.3rem;
+
+  color: white;
+}
+
+
+/* =========================================================
+   06 · FOCOS
+========================================================= */
+
+.focos-section {
+  background: var(--crema-claro);
+}
+
+.focos-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-top: 60px;
+}
+
+.foco-card {
+  background: white;
+
+  padding: 30px 24px;
+
+  border-radius: 22px;
+
+  border: 1px solid rgba(64,81,59,0.08);
+
+  transition: 0.35s ease;
+}
+
+.foco-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--sombra);
+}
+
+.foco-card > span {
+  font-size: 2.5rem;
+
+  display: block;
+
+  margin-bottom: 20px;
+}
+
+.foco-card h3 {
+  font-family: var(--serif);
+
+  font-size: 1.5rem;
+
+  color: var(--verde-oscuro);
+
+  margin-bottom: 14px;
+}
+
+.foco-pregunta {
+  font-weight: 600;
+
+  margin-bottom: 15px;
+}
+
+.foco-card small {
+  color: var(--texto-suave);
+
+  line-height: 1.6;
+}
+
+
+/* unión */
+
+.union-focos {
+  max-width: 750px;
+
+  margin: 80px auto 0;
+
+  text-align: center;
+
+  background: var(--verde-suave);
+
+  padding: 45px 35px;
+
+  border-radius: var(--radio);
+}
+
+.union-focos > p:first-child,
+.union-focos > p:nth-child(2),
+.union-focos > p:nth-child(3) {
+  font-size: 1.4rem;
+  margin: 8px;
+}
+
+.union-focos h3 {
+  font-family: var(--serif);
+
+  color: var(--verde-oscuro);
+
+  font-size: clamp(2rem, 5vw, 3.4rem);
+
+  margin: 25px 0;
+}
+
+.union-focos p {
+  margin-top: 15px;
+}
+
+
+/* =========================================================
+   07 · CIERRE
+========================================================= */
+
+.cierre {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  text-align: center;
+
+  background: var(--verde-oscuro);
+
+  color: rgba(255,255,255,0.8);
+}
+
+.cierre h2 {
+  color: white;
+}
+
+.cierre-icon {
+  font-size: 3rem;
+
+  margin: 20px 0;
+}
+
+.cierre-intro {
+  font-family: var(--serif);
+
+  font-size: 1.4rem;
+
+  margin-bottom: 60px;
+}
+
+.cierre-intro strong {
+  color: var(--tierra-claro);
+}
+
+
+/* preguntas */
+
+.preguntas-finales {
+  text-align: left;
+}
+
+.preguntas-finales > div {
+  display: grid;
+
+  grid-template-columns: 50px 1fr;
+
+  gap: 20px;
+
+  padding: 25px 0;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.preguntas-finales span {
+  color: var(--tierra-claro);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+}
+
+.preguntas-finales p {
+  font-family: var(--serif);
+
+  font-size: 1.25rem;
+
+  color: white;
+}
+
+
+/* frase final */
+
+.frase-final {
+  margin-top: 90px;
+}
+
+.frase-final p {
+  font-size: 0.85rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  color: rgba(255,255,255,0.45);
+}
+
+.frase-final h3 {
+  font-family: var(--serif);
+
+  font-size: clamp(2.8rem, 7vw, 5rem);
+
+  font-weight: 500;
+
+  color: var(--tierra-claro);
+
+  margin: 5px 0 15px;
+}
+
+.frase-final span {
+  font-size: 2.5rem;
+}
+
+.firma {
+  margin-top: 80px;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 1px;
+
+  color: rgba(255,255,255,0.35);
+}
+
+
+/* =========================================================
+   RESPONSIVE · CELULAR
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .section {
+    padding: 85px 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .focos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .telefono-grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .telefono-visual {
+    min-height: 280px;
+
+    max-width: 280px;
+
+    width: 100%;
+
+    margin: auto;
+  }
+
+  .elementos-parabola {
+    flex-wrap: wrap;
+
+    gap: 20px;
+  }
+
+  .elemento {
+    min-width: 40%;
+  }
+
+  .flecha {
     display: none;
-    min-height: 100vh;
-    width: 100%;
-    padding: 35px 20px;
+  }
 
-    align-items: center;
-    justify-content: center;
-
-    opacity: 0;
 }
 
-.screen.active {
-    display: flex;
-    animation: aparecer .8s ease forwards;
-}
 
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+@media (max-width: 550px) {
 
-/* ========================================
-   TEXTOS
-======================================== */
+  .hero {
+    min-height: 100svh;
+  }
 
-h1,
-h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
-}
+  .hero h1 {
+    letter-spacing: -2px;
+  }
 
-h1 {
-    font-size: clamp(3rem, 9vw, 5.2rem);
-    line-height: .95;
-}
+  .hero-intro {
+    font-size: 0.92rem;
+  }
 
-h2 {
-    font-size: clamp(2rem, 6vw, 3.2rem);
-    line-height: 1.08;
-}
-
-p {
-    line-height: 1.8;
-    font-size: .95rem;
-}
-
-.mini {
-    font-size: .65rem;
-    letter-spacing: .25em;
-    font-weight: 600;
-    color: var(--dorado);
-    margin-bottom: 25px;
-}
-
-.mini.light {
-    color: rgba(255,255,255,.75);
-}
-
-.subtitle {
-    max-width: 350px;
-    margin: 15px auto 30px;
-    color: var(--marron-claro);
-}
-
-/* ========================================
-   BOTONES
-======================================== */
-
-button {
-    border: none;
-    background: var(--verde);
-    color: white;
-
-    padding: 15px 28px;
-
-    border-radius: 50px;
-
-    font-family: 'Montserrat', sans-serif;
-    font-size: .78rem;
-    letter-spacing: .05em;
-
-    cursor: pointer;
-
-    transition:
-        transform .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-
-    box-shadow: 0 10px 25px rgba(78,92,73,.18);
-}
-
-button:hover {
-    background: var(--verde-oscuro);
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(78,92,73,.25);
-}
-
-button:active {
-    transform: scale(.97);
-}
-
-button.special {
-    margin-top: 8px;
-    background: var(--marron);
-}
-
-/* ========================================
-   INICIO
-======================================== */
-
-.intro {
-    text-align: center;
-    width: 100%;
-    max-width: 550px;
-}
-
-.intro h1 {
-    margin-top: 40px;
-}
-
-.intro .subtitle {
-    margin-bottom: 25px;
-}
-
-/* ========================================
-   SOBRE
-======================================== */
-
-.envelope {
-    width: 280px;
-    height: 185px;
-
-    position: relative;
-    margin: 20px auto;
-
-    cursor: pointer;
-
-    filter: drop-shadow(0 20px 20px rgba(79,64,55,.15));
-
-    transition: transform .4s ease;
-}
-
-.envelope:hover {
-    transform: translateY(-5px) rotate(-1deg);
-}
-
-.envelope-back {
-    position: absolute;
-    inset: 0;
-
-    background: #d9c7ad;
-    border-radius: 4px;
-}
-
-.envelope-front {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-
-    overflow: hidden;
-    border-radius: 4px;
-
-    background:
-        linear-gradient(
-            30deg,
-            #dfcfb8 50%,
-            transparent 51%
-        ),
-        linear-gradient(
-            -30deg,
-            #eadcc8 50%,
-            transparent 51%
-        );
-}
-
-.envelope-flap {
-    position: absolute;
-    z-index: 4;
-
-    width: 100%;
-    height: 100%;
-
-    background: #e7d6bd;
-
-    clip-path: polygon(0 0, 100% 0, 50% 58%);
-
-    transform-origin: top;
-}
-
-.letter-preview {
-    position: absolute;
-
-    width: 88%;
-    height: 82%;
-
-    left: 6%;
-    top: 8%;
-
-    z-index: 2;
-
-    background: var(--papel);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    border-radius: 3px;
-
-    color: var(--marron);
-}
-
-.letter-preview span {
-    font-size: 1.7rem;
-}
-
-.letter-preview small {
-    margin-top: 7px;
-}
-
-.seal {
-    position: absolute;
-
-    width: 48px;
-    height: 48px;
-
-    border-radius: 50%;
-
-    background: var(--verde);
-
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 6;
-
-    left: calc(50% - 24px);
-    top: 80px;
-
-    border: 3px solid rgba(255,255,255,.25);
-
-    box-shadow: 0 5px 15px rgba(0,0,0,.15);
-}
-
-/* Animación cuando se abre */
-
-.envelope.open .envelope-flap {
-    animation: abrirSobre .8s forwards;
-}
-
-.envelope.open .seal {
-    animation: desaparecerSello .3s forwards;
-}
-
-.envelope.open .letter-preview {
-    animation: sacarCarta 1s .45s forwards;
-}
-
-@keyframes abrirSobre {
-    0% {
-        transform: rotateX(0deg);
-    }
-
-    100% {
-        transform: rotateX(180deg);
-        z-index: 1;
-    }
-}
-
-@keyframes desaparecerSello {
-    to {
-        opacity: 0;
-        transform: scale(.6);
-    }
-}
-
-@keyframes sacarCarta {
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-80px);
-    }
-}
-
-/* ========================================
-   PAPEL / CARTA
-======================================== */
-
-.paper {
-    position: relative;
-
-    width: min(100%, 600px);
-
-    background: var(--papel);
-
-    padding: clamp(35px, 7vw, 65px);
-
-    border-radius: 5px;
-
-    box-shadow:
-        0 25px 70px rgba(79,64,55,.12),
-        0 2px 4px rgba(79,64,55,.05);
-
-    border: 1px solid rgba(185,154,103,.15);
-}
-
-.paper::before {
-    content: "";
-
-    position: absolute;
-    inset: 12px;
-
-    border: 1px solid rgba(185,154,103,.2);
-
-    pointer-events: none;
-}
-
-.paper h2 {
-    margin-bottom: 25px;
-}
-
-.paper p {
-    margin-bottom: 20px;
-    color: #6f6055;
-}
-
-.paper button {
-    margin-top: 12px;
-}
-
-.paper.center {
-    text-align: center;
-}
-
-.star,
-.heart {
-    display: block;
-
-    font-family: serif;
-
-    font-size: 1.7rem;
-
-    color: var(--dorado);
-
-    margin-bottom: 20px;
-}
-
-/* ========================================
-   FECHAS
-======================================== */
-
-.dates {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-
-    margin: 20px 0 35px;
-}
-
-.date {
-    width: 82px;
-    height: 100px;
-
-    border: 1px solid rgba(185,154,103,.35);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background: rgba(255,255,255,.35);
-}
-
-.date strong {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    line-height: 1;
-    color: var(--marron);
-}
-
-.date span {
-    font-size: .6rem;
-    letter-spacing: .2em;
-    color: var(--dorado);
-    margin-top: 5px;
-}
-
-.destination-label {
-    font-size: .6rem !important;
-    letter-spacing: .25em;
-    margin-bottom: 10px !important;
-    color: var(--dorado) !important;
-}
-
-.santa-ana {
-    font-size: clamp(3.5rem, 12vw, 6rem);
-    color: var(--verde-oscuro);
-    margin-bottom: 5px;
-}
-
-/* ========================================
-   TICKET
-======================================== */
-
-#ticketScreen {
-    background:
-        radial-gradient(circle at 10% 10%, rgba(255,255,255,.08), transparent 30%),
-        radial-gradient(circle at 90% 90%, rgba(185,154,103,.12), transparent 30%),
-        var(--verde-oscuro);
-}
-
-.ticket-wrapper {
-    width: min(100%, 560px);
-    text-align: center;
-}
-
-.ticket {
-    background: var(--blanco);
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    box-shadow: 0 30px 80px rgba(0,0,0,.25);
-
-    text-align: left;
-
-    animation: ticketEntrada .9s cubic-bezier(.17,.67,.36,1.25);
-}
-
-@keyframes ticketEntrada {
-    from {
-        opacity: 0;
-        transform: translateY(40px) rotate(-2deg) scale(.92);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) rotate(0) scale(1);
-    }
-}
-
-.ticket-top {
-    background: var(--marron);
-
-    color: white;
-
-    display: flex;
-    justify-content: space-between;
-
-    padding: 17px 25px;
-
-    font-size: .65rem;
-    letter-spacing: .18em;
-}
-
-.ticket-body {
-    padding: 30px;
-}
-
-.ticket-label {
-    font-size: .58rem;
-    letter-spacing: .25em;
-    color: var(--marron-claro);
-}
-
-.ticket-body h1 {
-    font-size: 4rem;
-    margin: 5px 0;
-}
-
-.ticket-line {
-    border-top: 1px dashed #cdbda9;
-    margin: 22px 0;
-}
-
-.ticket-grid {
+  .elementos-parabola {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 25px 15px;
+  }
+
+  .elemento span {
+    font-size: 2.2rem;
+  }
+
+  .cards {
+    gap: 15px;
+  }
+
+  .card {
+    padding: 28px 25px;
+  }
+
+  .focos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .foco-card {
+    padding: 28px;
+  }
+
+  .preguntas-telefono {
+    grid-template-columns: 1fr;
+  }
+
+  .telefono-icon {
+    font-size: 8rem;
+  }
+
+  .union-focos {
+    padding: 35px 22px;
+  }
+
+  .paso {
+    padding: 18px;
+  }
+
+  .paso p {
+    font-size: 1.15rem;
+  }
+
+  .preguntas-finales > div {
+    grid-template-columns: 35px 1fr;
+  }
+
+  .preguntas-finales p {
+    font-size: 1.1rem;
+  }
+
 }
 
-.ticket-grid div {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
 
-.ticket-grid small,
-.status small {
-    font-size: .55rem;
-    letter-spacing: .18em;
-    color: var(--marron-claro);
-}
+/* =========================================================
+   SELECCIÓN DE TEXTO
+========================================================= */
 
-.ticket-grid strong {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-}
-
-.status {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.status strong {
-    color: var(--verde);
-    font-size: 1.2rem;
-}
-
-.paid {
-    margin-top: 22px;
-
-    padding: 15px;
-
-    border: 1px solid var(--verde);
-
-    color: var(--verde);
-
-    text-align: center;
-
-    font-weight: 600;
-    letter-spacing: .16em;
-
-    transform: rotate(-1deg);
-}
-
-.ticket-number {
-    text-align: center;
-
-    font-size: .55rem;
-
-    letter-spacing: .25em;
-
-    color: #b0a296;
-
-    margin-top: 22px;
-}
-
-.reveal-text {
-    color: white;
-
-    margin: 25px 0 20px;
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 1.5rem;
-}
-
-/* ========================================
-   MENSAJE DE LIBERTAD
-======================================== */
-
-.important {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem !important;
-
-    color: var(--verde-oscuro) !important;
-
-    margin-top: 30px;
-}
-
-/* ========================================
-   FINAL
-======================================== */
-
-#final {
-    background:
-        radial-gradient(circle at 50% 20%, rgba(185,154,103,.14), transparent 30%),
-        var(--marron);
-
-    color: white;
-}
-
-.final-content {
-    width: min(100%, 650px);
-    text-align: center;
-}
-
-.final-star {
-    display: block;
-
-    font-size: 2rem;
-
-    color: var(--dorado);
-
-    margin-bottom: 25px;
-}
-
-.final-content h1 {
-    font-size: clamp(3.3rem, 11vw, 6rem);
-    margin-bottom: 5px;
-}
-
-.final-content h2 {
-    font-size: clamp(2rem, 7vw, 3.4rem);
-
-    font-style: italic;
-
-    color: #e9ddcb;
-}
-
-.final-destination {
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: clamp(2rem, 8vw, 3.5rem);
-
-    margin-top: 40px;
-
-    color: #d9c49f;
-}
-
-.final-date {
-    display: inline-block;
-
-    margin: 25px 0 40px;
-
-    padding: 12px 20px;
-
-    border-top: 1px solid rgba(255,255,255,.25);
-    border-bottom: 1px solid rgba(255,255,255,.25);
-
-    font-size: .65rem;
-    letter-spacing: .22em;
-}
-
-.anonymous {
-    color: rgba(255,255,255,.65);
-
-    font-family: 'Cormorant Garamond', serif;
-
-    font-size: 1.2rem;
-
-    line-height: 1.6;
-}
-
-/* ========================================
-   CELULAR
-======================================== */
-
-@media (max-width: 600px) {
-
-    .screen {
-        padding: 25px 17px;
-    }
-
-    .paper {
-        padding: 45px 30px;
-    }
-
-    .paper::before {
-        inset: 8px;
-    }
-
-    .envelope {
-        width: 245px;
-        height: 162px;
-    }
-
-    .seal {
-        top: 68px;
-    }
-
-    .dates {
-        gap: 8px;
-    }
-
-    .date {
-        width: 70px;
-        height: 88px;
-    }
-
-    .date strong {
-        font-size: 2.4rem;
-    }
-
-    .ticket-body {
-        padding: 25px 22px;
-    }
-
-    .ticket-body h1 {
-        font-size: 3.4rem;
-    }
-
-    .ticket-grid {
-        gap: 15px;
-    }
+::selection {
+  background: var(--verde);
+  color: white;
 }
